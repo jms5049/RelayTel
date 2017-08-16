@@ -252,18 +252,24 @@ highMaps.prototype.init = function() {
                                             initMap();
                                             codeAddress(geojson2.name,e.point.name);
                                             var node = document.createElement("button");
-                                            var div = document.getElementById("map_div")
-                                            var textnode = document.createTextNode("back to");
+                                            var div = document.getElementById("map_div");
+                                            var textnode = document.createTextNode("Back To Map");
+                                            var button_lo = document.getElementById('button_lo');
+                                            
+                                            button_lo.setAttribute("style","margin-left:32%;width:18%;height:50px;");
+                                            
                                             node.setAttribute("onclick","back_to_map()");
                                             node.setAttribute("id","back_to_button");
-                                            node.setAttribute("style", "float: right;margin-right:27%; margin-top: -41%;");
+                                            node.setAttribute("class","button_new");
+                                            node.setAttribute("style", "position:relative;width:18%;height:50px;");
+                                            node.appendChild(textnode);
                                             div.appendChild(node);
                                             
                                             
                                             // var button = document.getElementById("back_to_button");
                                             // button.setAttribute("style", "margin-left:100px");
-                                            node.appendChild(textnode);
-                                            document.body.appendChild(node);
+                                            // node.appendChild(textnode);
+                                            // document.body.appendChild(node);
                                             
                                         }
                                     }
@@ -400,6 +406,9 @@ function back_to_map(){
     highMaps.prototype.init();
     var button = document.getElementById("back_to_button");
     button.parentNode.removeChild(button);
+    
+    var button_lo = document.getElementById('button_lo');
+    button_lo.setAttribute("style","margin-left:40%;width:18%;height:50px;");
 }
 </script>
 <style type="text/css">
@@ -413,7 +422,7 @@ function back_to_map(){
             margin:0 auto;
             z-index:1;
             background-color:#fff;
-            border-radius: 100px;
+            border-radius: 20px;
         }
         /*.hc_i {*/
         /*    margin-bottom: 20px;*/
@@ -537,6 +546,47 @@ function back_to_map(){
             background-size: cover;
             position:absolute;
         }
+	.button_new{
+		background:#9FBAB2;
+		  color:#fff;
+		  border:none;
+		  position:relative;
+		  height:15%;
+		  font-size:1.6em;
+		  padding:0 2em;
+		  cursor:pointer;
+		  transition:800ms ease all;
+		  outline:none;
+	}
+	.button_new:hover{
+	  background:none;
+	  color:#EFFEF9;
+	}
+	.button_new:before,.button_new:after{
+	  content:'';
+	  position:absolute;
+	  top:0;
+	  right:0;
+	  height:2px;
+	  width:0;
+	  background: #EFFEF9;
+	  transition:400ms ease all;
+	}
+	.button_new:after{
+	  right:inherit;
+	  top:inherit;
+	  left:0;
+	  bottom:0;
+	}
+	.button_new:hover:before,.button_new:hover:after{
+	  width:100%;
+	  transition:800ms ease all;
+	}
+	
+	#button_lo{
+	    margin-top:2%;
+	    margin-left:40%;
+	}
 </style>
 <script>
     var highMap = new highMaps();
@@ -551,16 +601,17 @@ function back_to_map(){
                 
                 <br>
                 <br>
-                <h1 style="text-align:center; font-Weight:bold;     color: #525656;">원하는 장소와 호텔을 지정해주세요</h1>
+                <h1 style="text-align:center; font-Weight:bold; color: #525656;">원하는 장소와 호텔을 지정해주세요</h1>
                 <br>
                 <br>
                 <div class=".col-md-6" id="map" >
                         <!--margin-left:57%;-->
-               
                 </div>
-                <div>
-            	<img class="relay" style="height:3%; width:15%;display:block;margin: 4% auto;" <%= image_tag("relaytel2_gray.png", :alt => "") %>
+                <div id="map_div">
+                    <a href="/login"><button class="button_new" id="button_lo" style="width:18%;height:50px;" type="submit" >Back Page</button></a>
+                	<!--<img class="relay" style="height:3%; width:15%;display:block;margin: 1% auto;" <%#= image_tag("relaytel2_gray.png", :alt => "") %>-->
 		    	</div>
+		    <!--</div>-->
         </div>
 	</div>
 	

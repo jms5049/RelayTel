@@ -59,6 +59,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.2.0)
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.3.7)
@@ -155,6 +156,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_calendar (2.2.6)
+      rails (>= 3.0)
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
@@ -196,6 +199,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  devise-i18n
   jbuilder (~> 2.0)
   jquery-rails
   pg
@@ -203,6 +207,7 @@ DEPENDENCIES
   rails_db
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_calendar (~> 2.0)
   spring
   sqlite3
   turbolinks

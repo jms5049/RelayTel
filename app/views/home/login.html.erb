@@ -229,6 +229,7 @@
 			<% else %>
 				<div style="margin-top:50px">
 				<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				
 				  <div class="field">
 				    <%= f.label :email , class:"remember_me"%><br />
 				    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "이메일을 입력하세요" %>
@@ -246,6 +247,7 @@
 				    <!--</div>-->
 				  <%# end %>
 				  <div style="margin-top:20px">
+				  	<!--<a href="/users/password/new" style="margin-top:10px;display:block; color:#525656;font-weight:bold;">비밀번호 왜 까먹었니?</a>-->
 				  	<a href="/users/sign_up" style="margin-top:10px;display:block; color:#525656;font-weight:bold;">회원가입</a>
 				  </div>
 				  <div class="actions" style="margin-top:10px">

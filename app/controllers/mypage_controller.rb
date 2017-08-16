@@ -1,6 +1,10 @@
 class MypageController < ApplicationController
     
+    
+    
     def mypage
+      
+      
     #로그인 화면만 네비바가 표시안되게 설정
     @week = 7
     @row = 5
@@ -25,6 +29,14 @@ class MypageController < ApplicationController
       
 
       if (ApplicationForm.find_by_user_id(current_user.id) != nil) #폼을 가져왔는데 nil값이 아닐때. 폼이 존재할때.
+
+        #달력
+        @month_calendar
+        @startDate = Date.strptime(@user_information.check_in, '%m/%d/%Y')
+        @endDate = Date.strptime(@user_information.check_out, '%m/%d/%Y')
+        # = Date.strptime(@user_information.check_in, '%m/%d/%Y')
+        #----
+
 
         user = ApplicationForm.find_by_user_id(current_user.id) #위에랑 중첩
         #where로 받아올때는 배열로 받아와짐.
