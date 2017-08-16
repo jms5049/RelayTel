@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-   before_action :authenticate_user!, only: %i[map application_form]
+
 
   # def login
   #   #로그인 화면만 네비바가 표시안되게 설정

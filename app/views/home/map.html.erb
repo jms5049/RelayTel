@@ -34,7 +34,7 @@ var locations_name = []; //위치의 이름을 저장하기 위한 배열
 var add;
 $.ajax({ 
   method: "get",
-  url: "https://relayhotel-bgd0706.c9users.io/real_HT.csv",
+  url: "http://relaytel-likelion.herokuapp.com/real_HT.csv",
   datatype: 'text', // 받는 data타입은 json형태
   success: function(data) {
     var allTextLines = data.split('\n');
@@ -182,7 +182,7 @@ highMaps.prototype.init = function() {
     
     // 전국단위 지도 로드
     
-    $.getJSON('https://relayhotel-bgd0706.c9users.io/json/0.json', function(geojson) {
+    $.getJSON('http://relaytel-likelion.herokuapp.com/json/0.json', function(geojson) {
         var data = Highcharts.geojson(geojson, 'map');
         $.each(data, function() {
             this.drilldown = this.properties['code'];
@@ -200,7 +200,7 @@ highMaps.prototype.init = function() {
                             // 상위레벨에서 선택한 부분의 코드값에 따라 하위레벨이 결정
                             var chart = this,
                                 mapKey = e.point.drilldown;
-                            $.getJSON('https://relayhotel-bgd0706.c9users.io/json/' + mapKey + '.json', function(geojson2) {
+                            $.getJSON('http://relaytel-likelion.herokuapp.com/json/' + mapKey + '.json', function(geojson2) {
                                 data = Highcharts.geojson(geojson2, 'map');
                                 chart.addSeriesAsDrilldown(e.point, {
                                     name: e.point.name,
