@@ -216,16 +216,16 @@
 		      				<td class="week">Fri</td>
 		      				<td class="week">Sat</td>
 		      			</tr>
-		      			<%#while @i < @row do %>
+		      			<%while @i < @row do %>
 			      			<tr style="background:#eee;">
-			      				<%# while @j < @week do %>
+			      				<% while @j < @week do %>
 			      				<td class="day">day</td>
-			      				<%# @j = @j + 1 %>
-			      				<%# end %>
+			      				<% @j = @j + 1 %>
+			      				<% end %>
 			      			</tr>
-			      		<%# @i = @i + 1 %>
-			      		<%# @j = 0 %>
-		      			<%# end %>
+			      		<% @i = @i + 1 %>
+			      		<% @j = 0 %>
+		      			<% end %>
 		      			</tbody>
 		      		</table>
 			      	
